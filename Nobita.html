@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Ready()">
+
+    <img id="nobita" src="1.png" style="position:absolute;left:0; top:0;" height="200" width="100">
+    <script>
+        function up() {
+            let elemen = document.getElementById('nobita');
+            elemen.style.top = parseInt(elemen.style.top)-5+ 'px';
+        }
+        function down() {
+            let elemen = document.getElementById('nobita');
+            elemen.style.top = parseInt(elemen.style.top) +5+ 'px';
+        }
+        function leftA() {
+            let elemen = document.getElementById('nobita');
+            elemen.style.left = parseInt(elemen.style.left) -5+ 'px';
+        }
+        function rightA() {
+            let elemen = document.getElementById('nobita');
+            elemen.style.left = parseInt(elemen.style.left) +5+ 'px';
+        }
+
+        function move(env) {
+            switch (env.keyCode) {
+                case 37:
+                    leftA();
+                    break;
+                case 38:
+                    up();
+                    break;
+                case 39:
+                    rightA();
+                    break;
+                case 40:
+                    down();
+                    break;
+                default:
+                    alert('Khong phai cac phim di chuyen');
+                    break;
+            }
+        }
+        function Ready() {
+            window.addEventListener("keydown", move);
+        }
+    </script>
+</body>
+</html>
